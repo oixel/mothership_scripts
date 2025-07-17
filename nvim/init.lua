@@ -3,7 +3,8 @@
 --
 
 -- Opt into desired features
-vim.opt.rnu = true  -- Displays jump distance from cursor
+vim.opt.rnu = true  -- Displays relative line distance from cursor
+vim.opt.number = true  -- Enable line number on current line
 
 -- Set tabs to be equivalent to 4 spaces
 vim.opt.tabstop = 4
@@ -25,9 +26,8 @@ local function enable_write_settings()
 	-- Set custom spellfile directory
 	vim.opt.spellfile = "/home/oixel/.vim/spell/en.utf-8.add"
 	
-	-- Enable line numbers and wrapping on empty space
-	vim.opt.number = true
-	vim.opt.linebreak = true
+	vim.opt.rnu = false  -- Disable relative line numbering while in WriteMode
+	vim.opt.linebreak = true  -- Enable wrapping on empty space
 
 	-- Toggle keybindings for 'j' and 'k' to work with visual lines.
 	vim.keymap.set("n", "j", "gj", { noremap=true, silent=true, desc="Move cursor down one visual line" })
@@ -40,9 +40,11 @@ end
 -- Disable custom write settings
 local function disable_write_settings()
 	-- Disable all enabled optional settings
-	vim.opt.spell = false 
-	vim.opt.number = false 
-	vim.opt.linebreak = false 
+	vim.opt.spell = false
+	vim.opt.linebreak = false
+
+	-- Re-enable relative line numbering when WriteMode is exited
+	vim.opt.rnu = true
 	
 	-- Remap keybindings back to normal (move down one actual line)
 	vim.keymap.del("n", "j")
