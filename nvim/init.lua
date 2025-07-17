@@ -2,6 +2,9 @@
 -- Should be place in ~/.config/nvim
 --
 
+-- Opt into desired features
+vim.opt.rnu = true  -- Displays jump distance from cursor
+
 -- Tracks whether the custom writing settings have been enabled
 _G.write_settings_enabled = false
 
