@@ -90,7 +90,7 @@ vim.api.nvim_create_user_command(
 )
 
 -- Makes Ctrl + B open the file explorer
-vim.api.nvim_set_keymap('n', '<C-b>, ':Explore<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-b>', ':Explore<CR>', { noremap = true, silent = true })
 
 -- Insert Lazy vim config
 require("config.lazy")
