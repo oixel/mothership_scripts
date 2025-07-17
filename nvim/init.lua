@@ -5,6 +5,10 @@
 -- Opt into desired features
 vim.opt.rnu = true  -- Displays jump distance from cursor
 
+-- Set tabs to be equivalent to 4 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Tracks whether the custom writing settings have been enabled
 _G.write_settings_enabled = false
 
