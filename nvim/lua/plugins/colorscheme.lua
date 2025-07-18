@@ -1,11 +1,13 @@
+-- Get gruxbox colorscheme
+-- (https://github.com/ellisonleao/gruvbox.nvim)
 return {
-  -- Gets gruvbox color scheme from GitHub
-  "ellisonleao/gruvbox.nvim",
-  priority = 1000,
-  config = function()
-    -- Force dark mode
-    vim.o.background = "dark"
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
+	config = function()
+		-- Force dark mode
+		vim.o.background = "dark"
 
-    -- Load the colorscheme
-    vim.cmd([[colorscheme gruvbox]])
+		-- Load the colorscheme
+		vim.cmd([[colorscheme gruvbox]])
+	end,
 }
